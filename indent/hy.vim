@@ -77,10 +77,10 @@ let s:indent_path = fnamemodify(expand("<sfile>"), ":p:h")
 python3 import sys
 exe 'python3 sys.path.insert(0, "' . escape(s:indent_path, '\"') . '")'
 python3 import hy
-python3 import hy_indent
+"python3 import hy_indent
 
 function! HyIndent(lnum)
 	return pyeval('hy_indent.do_indent(' . a:lnum . ')')
 endfunction
 
-setlocal indentexpr=HyIndent(v:lnum)
+"setlocal indentexpr=HyIndent(v:lnum)
